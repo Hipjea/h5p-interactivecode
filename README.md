@@ -3,7 +3,27 @@ H5P content type that can display and grade interactive code snippets. Uses [Kli
 
 Work in progress - Still need to add grading capability.
 
-## Todo:
+## Todo :
 - [ ] Add support for grading code snippets
 - [ ] Create examples
 - [ ] Add HTML, CSS, SVG and React code support
+
+
+
+## Compiling :
+
+This project has been created using **webpack-cli**, you can now run
+
+```
+npm install
+npm run build
+```
+
+or
+
+```
+yarn install
+yarn build
+```
+
+to bundle your application

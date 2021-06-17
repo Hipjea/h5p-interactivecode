@@ -9,14 +9,14 @@
   },
   {
     "label": "Code Snippet",
-    "name": "code_snippet",
+    "name": "codeSnippet",
     "type": "text",
     "default": "var x = 1;",
     "description": "The code will be displayed, executed and be editable.",
     "widget": "textarea"
   },
   {
-    "name": "programming_language",
+    "name": "programmingLanguage",
     "type": "select",
     "label": "Programming Language",
     "description": "Select the Programming Language that is used in the example",
@@ -47,5 +47,33 @@
       }
     ],
     "default": "javascript"
+  },
+  {
+    "label": "Snippet width",
+    "name": "snippetWidth",
+    "type": "number",
+    "default": "100",
+    "description": "The CSS value of the snippet width."
+  },
+  {
+    "label": "Snippet width unit",
+    "name": "snippetWidthUnit",
+    "type": "select",
+    "description": "The CSS unit of value of the snippet width.",
+    "options": [
+      {
+        "value": "%",
+        "label": "%"
+      },
+      {
+        "value": "px",
+        "label": "px"
+      },
+      {
+        "value": "em",
+        "label": "em"
+      }
+    ],
+    "default": "%"
   }
 ]
