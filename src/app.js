@@ -16,13 +16,14 @@ H5P.InteractiveCode = (function () {
         this.wrapper = null;
         this.id = contentId;
         this.params = params;
+        this.error = null;
 
-        const customId = `code-snippet-${contentId}`;
-        const language = getLanguageEval(this.params.programmingLanguage);
-        const snippetWidthVal = this.params.displaySettings.snippetWidth;
-        const snippetWidthUnit = this.params.displaySettings.snippetWidthUnit;
-        const snippetWidth = `${snippetWidthVal}${snippetWidthUnit}`;
-        const snippetFont = this.params.displaySettings.snippetFont;
+        const customId = `code-snippet-${contentId}`,
+            language = getLanguageEval(this.params.programmingLanguage),
+            snippetWidthVal = this.params.displaySettings.snippetWidth,
+            snippetWidthUnit = this.params.displaySettings.snippetWidthUnit,
+            snippetWidth = `${snippetWidthVal}${snippetWidthUnit}`,
+            snippetFont = this.params.displaySettings.snippetFont;
 
         const createElements = () => {
             const wrapper = document.createElement('div');
@@ -32,8 +33,9 @@ H5P.InteractiveCode = (function () {
             ReactDOM.render(
                 <H5PContext.Provider value={this}>
                     <Main
-                        {...this.params}
                         id={contentId}
+                        error={this.error}
+                        {...this.params}
                     />
                 </H5PContext.Provider>,
                 this.wrapper
@@ -48,8 +50,10 @@ H5P.InteractiveCode = (function () {
             $container[0].appendChild(this.wrapper);
             $container[0].classList.add('h5p-interactive-code');
 
-            const klipsify = new Promise((resolve, reject) => {
-                resolve(klipse.plugin.klipsify(document.getElementById(customId), settings, language));
+            const klipsify = new Promise((resolve, _) => {
+                resolve(
+                    klipse.plugin.klipsify(document.getElementById(customId), settings, language)
+                );
             });
             klipsify.then(() => {
                 const root = document.documentElement;
