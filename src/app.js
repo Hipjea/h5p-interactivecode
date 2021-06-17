@@ -19,7 +19,10 @@ H5P.InteractiveCode = (function () {
 
         const customId = `code-snippet-${contentId}`;
         const language = getLanguageEval(this.params.programmingLanguage);
-        const snippetWidth = `${this.params.snippetWidth}${this.params.snippetWidthUnit}`;
+        const snippetWidthVal = this.params.displaySettings.snippetWidth;
+        const snippetWidthUnit = this.params.displaySettings.snippetWidthUnit;
+        const snippetWidth = `${snippetWidthVal}${snippetWidthUnit}`;
+        const snippetFont = this.params.displaySettings.snippetFont;
 
         const createElements = () => {
             const wrapper = document.createElement('div');
@@ -51,6 +54,7 @@ H5P.InteractiveCode = (function () {
             klipsify.then(() => {
                 const root = document.documentElement;
                 root.style.setProperty('--snippet-width', snippetWidth);
+                root.style.setProperty('--snippet-font', snippetFont);
             });
         };
     }

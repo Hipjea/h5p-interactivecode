@@ -13,3 +13,9 @@ export function getLanguageEval(programmingLanguage) {
 export const settings = {
     selector_eval_js: '.code-snippet', // css selector for the html elements you want to klipsify
 };
+
+export function decodeHtmlEntities(html) {
+    let txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+}

@@ -9,8 +9,9 @@ Work in progress - Still need to add grading capability.
 - [ ] Add HTML, CSS, SVG and React code support
 
 
+## Development :
 
-## Compiling :
+### Compiling :
 
 This project has been created using **webpack-cli**, you can now run
 
@@ -27,3 +28,9 @@ yarn build
 ```
 
 to bundle your application
+
+### H5P package :
+
+```
+zip -r -D -X interactivecode.h5p .*
+```
