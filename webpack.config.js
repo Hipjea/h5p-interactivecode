@@ -13,6 +13,7 @@ const config = {
         filename: 'interactivecode.js'
     },
     plugins: [
+        // Copy Coremirror and Klipse necessary files from node_modules.
         new CopyWebpackPlugin(
             { 
                 patterns: [
@@ -30,7 +31,7 @@ const config = {
                 test: /\.(js|jsx)$/i,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: 'babel-loader'
                 }
             },
             {
