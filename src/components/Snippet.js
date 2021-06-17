@@ -1,4 +1,5 @@
 import React from 'react';
+import { decodeHtmlEntities } from '../utils';
 
 function Snippet(props) {
     return (
@@ -6,7 +7,7 @@ function Snippet(props) {
             id={`code-snippet-${props.id}`}
             className={"h5p-interactive-code-snippet code-snippet"}
         >
-            {props.codeSnippet}
+            {decodeHtmlEntities(props.codeSnippet)}
         </section>
     );
 }

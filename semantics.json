@@ -5,7 +5,20 @@
     "type": "text",
     "default": "Enter instruction here",
     "description": "The instruction is displayed above the code snippet.",
-    "widget": "textarea"
+    "optional": true,
+    "widget": "html",
+    "tags": [
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "p",
+      "br",
+      "strong",
+      "em",
+      "code"
+    ]
   },
   {
     "label": "Code Snippet",
@@ -49,31 +62,69 @@
     "default": "javascript"
   },
   {
-    "label": "Snippet width",
-    "name": "snippetWidth",
-    "type": "number",
-    "default": "100",
-    "description": "The CSS value of the snippet width."
-  },
-  {
-    "label": "Snippet width unit",
-    "name": "snippetWidthUnit",
-    "type": "select",
-    "description": "The CSS unit of value of the snippet width.",
-    "options": [
+    "label": "Display settings",
+    "name": "displaySettings",
+    "type": "group",
+    "importance": "low",
+    "fields": [
       {
-        "value": "%",
-        "label": "%"
+        "label": "Snippet font",
+        "name": "snippetFont",
+        "type": "select",
+        "description": "The font used to display the code snippet.",
+        "options": [
+          {
+            "value": "monaco",
+            "label": "Monaco"
+          },
+          {
+            "value": "UbuntuMono",
+            "label": "UbuntuMono"
+          },
+          {
+            "value": "FiraCode, monospace",
+            "label": "FiraCode"
+          },
+          {
+            "value": "IBMPlexMon",
+            "label": "IBMPlexMon"
+          },
+          {
+            "value": "SourceCodePro",
+            "label": "SourceCodePro"
+          }
+        ],
+        "default": "monaco"
       },
       {
-        "value": "px",
-        "label": "px"
+        "label": "Snippet width",
+        "name": "snippetWidth",
+        "type": "number",
+        "default": "100",
+        "description": "The CSS value of the snippet width.",
+        "decimals": 0
       },
       {
-        "value": "em",
-        "label": "em"
+        "label": "Snippet width unit",
+        "name": "snippetWidthUnit",
+        "type": "select",
+        "description": "The CSS unit of value of the snippet width.",
+        "options": [
+          {
+            "value": "%",
+            "label": "%"
+          },
+          {
+            "value": "px",
+            "label": "px"
+          },
+          {
+            "value": "em",
+            "label": "em"
+          }
+        ],
+        "default": "%"
       }
-    ],
-    "default": "%"
+    ]
   }
 ]

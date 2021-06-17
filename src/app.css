@@ -1,11 +1,33 @@
+@font-face {
+    font-family: 'UbuntuMono';
+    src: url('../assets/fonts/UbuntuMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'IBMPlexMon';
+    src: url('../assets/fonts/IBMPlexMono-Regular.woff2') format('webfont.woff2'),
+    url('../assets/fonts/IBMPlexMono-Regular.woff') format('woff'),
+    url('../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../assets/fonts/SourceCodePro-Regular.ttf.woff2') format('webfont.woff2'),
+    url('../assets/fonts/SourceCodePro-Regular.ttf.woff') format('woff'),
+    url('../assets/fonts/SourceCodePro-Regular.ttf') format('truetype');
+}
+
+.CodeMirror {
+    font-family: var(--snippet-font) !important;
+}
+
 .h5p-interactive-code-snippet-wrapper {
-    width: var(--snippet-width);
+    width: var(--snippet-width) !important;
     margin: 0 auto;
 } 
 .h5p-interactive-code-snippet.code-snippet {
     width: 100%;
     margin: 16px;
-    font-family: fantasy;
     font-size: 20px;
     font-weight: bold;
     line-height: 24px;
